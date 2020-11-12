@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        
+         
         //let gameViewController = GameViewController()
-        window?.rootViewController = StartMenuViewController()
+        //window?.rootViewController = StartMenuViewController()
         
         return true
     }
