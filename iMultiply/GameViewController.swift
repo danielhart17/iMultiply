@@ -34,8 +34,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
         
         let width = (ScreenSize.width - layout.minimumInteritemSpacing*2)/3
         
@@ -86,11 +86,20 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultiplicationCell", for: indexPath) as! GameViewCell
+        
+        
+        
+        cell.contentView.layer.cornerRadius = 10.0
+        cell.contentView.layer.borderWidth = 1
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
+        
+        cell.firstNum.text = String(Int.random(in: 1..<11))
+        cell.secondNum.text = String(Int.random(in: 1..<11))
         
         return cell
     }
