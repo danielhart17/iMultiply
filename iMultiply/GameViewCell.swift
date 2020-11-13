@@ -9,4 +9,10 @@ import UIKit
 
 class GameViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var firstNum: UILabel!
+    @IBOutlet weak var secondNum: UILabel!
+    @IBOutlet weak var userAnswer: UITextField!
+    
+    
+    
 }

@@ -24,7 +24,6 @@
         <!--Start Menu View Controller-->
         <scene sceneID="nKr-2k-1PJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S2K-00-5f8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pfM-t8-Zy9" customClass="StartMenuViewController" customModule="iMultiply" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cz1-TX-AAg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -89,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="m9e-Mk-6bx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2K-00-5f8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="268.1159420289855" y="-27.455357142857142"/>
         </scene>
@@ -111,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-k1-lAD">
-                                <rect key="frame" x="309" y="44" width="85" height="40"/>
+                                <rect key="frame" x="315.5" y="44" width="78.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uZ4-EH-y7p"/>
                                 </constraints>
@@ -133,17 +133,17 @@
                                     <action selector="PauseButtonClicked:" destination="pwu-0I-rz6" eventType="touchUpInside" id="WFQ-dI-7oG"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysj-a9-pnI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysj-a9-pnI" customClass="collectionView" customModule="iMultiply" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="414" height="812"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fI8-ke-PCU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fI8-ke-PCU">
                                     <size key="itemSize" width="150" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultiplicationCell" id="3qw-59-NND">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultiplicationCell" id="3qw-59-NND" customClass="GameViewCell" customModule="iMultiply" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n2t-PG-au4">
@@ -171,19 +171,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_________" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-7e-SCk">
-                                                    <rect key="frame" x="-6" y="63.5" width="134" height="30.5"/>
+                                                    <rect key="frame" x="-6" y="69.5" width="134" height="29.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chO-RW-Hdd">
-                                                    <rect key="frame" x="57" y="46" width="13" height="30.5"/>
+                                                    <rect key="frame" x="57" y="46.5" width="13" height="29.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ObI-aL-J7b">
                                                     <rect key="frame" x="8" y="106" width="120" height="34"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="PKU-mM-4xg"/>
                                                         <constraint firstAttribute="height" constant="34" id="ggt-0i-HvA"/>
@@ -194,7 +195,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="aBr-7e-SCk" firstAttribute="leading" secondItem="n2t-PG-au4" secondAttribute="leading" constant="-6" id="1dq-aJ-1Tn"/>
-                                                <constraint firstItem="ObI-aL-J7b" firstAttribute="top" secondItem="aBr-7e-SCk" secondAttribute="bottom" constant="12" id="2u1-gS-NR6"/>
+                                                <constraint firstItem="ObI-aL-J7b" firstAttribute="top" secondItem="aBr-7e-SCk" secondAttribute="bottom" constant="7" id="2u1-gS-NR6"/>
                                                 <constraint firstItem="wug-mc-CRp" firstAttribute="top" secondItem="ham-LM-rS0" secondAttribute="bottom" constant="8" id="BwW-Td-uUM"/>
                                                 <constraint firstItem="wug-mc-CRp" firstAttribute="leading" secondItem="chO-RW-Hdd" secondAttribute="trailing" constant="8" symbolic="YES" id="CEu-vz-MBR"/>
                                                 <constraint firstItem="ObI-aL-J7b" firstAttribute="leading" secondItem="n2t-PG-au4" secondAttribute="leadingMargin" id="HYR-2C-fac"/>
@@ -207,7 +208,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <size key="customSize" width="150" height="160"/>
+                                        <connections>
+                                            <outlet property="firstNum" destination="ham-LM-rS0" id="11c-6O-LWp"/>
+                                            <outlet property="secondNum" destination="wug-mc-CRp" id="JkH-JT-2mS"/>
+                                            <outlet property="userAnswer" destination="ObI-aL-J7b" id="BJ5-Lg-Uae"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -230,6 +235,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="ysj-a9-pnI" id="VKT-t5-RjB"/>
                         <outlet property="scoreLabel" destination="R1Z-k1-lAD" id="fSW-Kl-ZZz"/>
                         <outlet property="timeLabel" destination="Kux-1h-7Qy" id="9y4-W0-vXB"/>
                     </connections>
@@ -241,7 +247,6 @@
         <!--Settings-->
         <scene sceneID="H0G-2f-lrq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e6i-rP-clS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="fCa-mL-pUq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8TH-gW-uAd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -267,6 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="rxb-aL-mAr"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6i-rP-clS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209" y="-435"/>
         </scene>

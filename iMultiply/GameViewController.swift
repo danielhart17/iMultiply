@@ -10,6 +10,7 @@ import SpriteKit
 
 class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -27,6 +28,19 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set collection view attributes
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        
+        let width = (ScreenSize.width - layout.minimumInteritemSpacing*2)/3
+        
+        layout.itemSize.width = width
+        layout.itemSize.height = width
         
         //set timeLabel to the time set in the settings
         
@@ -60,6 +74,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (count<6) {
             timeLabel.textColor = UIColor.red
         }
+        if (count == 0) {
+            return
+        }
         count-=1
     }
     
@@ -69,11 +86,12 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultiplicationCell", for: indexPath) as! GameViewCell
+        
         return cell
     }
     
